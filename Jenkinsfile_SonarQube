@@ -1,4 +1,4 @@
-## Pipeline to deploy custome sonarqube website
+// Pipeline to deploy custom sonarqube website
 
 pipeline{
     agent { 
