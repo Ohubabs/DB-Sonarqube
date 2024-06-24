@@ -1,3 +1,5 @@
+## Expose Sonarqube to the internet securely
+
 resource "kubernetes_ingress_v1" "sonarqube-ingress" {
   wait_for_load_balancer = true
   metadata {
