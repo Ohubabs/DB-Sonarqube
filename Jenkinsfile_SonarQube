@@ -1,0 +1,18 @@
+pipeline{
+    agent { 
+        label 'kubernetes'
+  }
+    stages{
+        stage('Deploy qa.devopsnetwork.net for Quality testing'){
+            steps{
+              withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                sh "echo 'Deploy qa.devopsnetwork.net for Quality testing'"
+                sh "terraform init"
+                sh "terraform validate"
+                sh "terraform plan"
+                sh "terraform apply --auto-approve"
+              }
+            }
+        }
+    }
+}
