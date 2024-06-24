@@ -1,0 +1,16 @@
+pipeline{
+    agent { 
+        label 'kubernetes'
+  }
+    stages{
+        stage('Destroy qa.devopsnetwork.net'){
+            steps{
+              withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                sh "echo 'Destroy qa.devopsnetwork.net'"
+                sh "terraform init"
+                sh "terraform destroy --auto-approve"
+                }
+            }
+        }
+    }
+}
