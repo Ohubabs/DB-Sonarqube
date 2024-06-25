@@ -16,5 +16,13 @@ pipeline{
               }
             }
         }
+        stage('Get pod IP for sonarqube to setup prometheus monitoring'){
+            steps{
+              withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                sh "echo 'Get pod IP for sonarqube to setup prometheus monitoring'"
+                sh "kubectl get po -o wide -n pipeline"
+              }
+            }
+        }
     }
 }
