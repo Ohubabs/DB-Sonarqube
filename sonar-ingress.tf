@@ -13,7 +13,7 @@ resource "kubernetes_ingress_v1" "sonarqube-ingress" {
     ingress_class_name = "nginx"
     tls {
       secret_name = "sonar-secret"
-      hosts = ["pipeline.devopsnetwork.net"] 
+      hosts = ["qa.devopsnetwork.net"] 
     }
     rule {
       host = "qa.devopsnetwork.net"  
