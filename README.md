@@ -17,6 +17,9 @@ For this project, you are to setup a pipeline to deploy a Sonarqube application 
 
 ### Step 2: Go to “Configuration”, Select “Poll SCM” and Enter the details for your GitHub repo & Jenkinsfile or copy and paste the Jenkinsfile in this repo.
 
+![image](https://github.com/user-attachments/assets/4da31455-d717-47a2-a4cb-c07f0158ee11)
+
+
 ### Step 3: Click “Build now” to Deploy a Sonarqube application into the DB Cluster for performing continuous testing Code Quality.
 
 ![Screenshot 2024-06-24 at 4 50 26 PM](https://github.com/user-attachments/assets/fa3c27d1-32b4-4d73-a554-a7ffd0b5b7af)
